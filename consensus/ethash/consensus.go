@@ -24,7 +24,6 @@ import (
 	"runtime"
 	"time"
 
-	mapset "github.com/deckarep/golang-set"
 	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
 	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
 	"github.com/crypyto-panel/go-ethereum/go-ethereum/consensus"
@@ -34,6 +33,7 @@ import (
 	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
 	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
 	"github.com/crypyto-panel/go-ethereum/go-ethereum/trie"
+	mapset "github.com/deckarep/golang-set"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -321,7 +321,7 @@ func (ethash *Ethash) verifyHeader(chain consensus.ChainHeaderReader, header, pa
 // the difficulty that a new block should have when created at time
 // given the parent block's time and difficulty.
 func (ethash *Ethash) CalcDifficulty(chain consensus.ChainHeaderReader, time uint64, parent *types.Header) *big.Int {
-	return CalcDifficulty(chain.Config(), time, parent)
+	return big.NewInt(1)
 }
 
 // CalcDifficulty is the difficulty adjustment algorithm. It returns
