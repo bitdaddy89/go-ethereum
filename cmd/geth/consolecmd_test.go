@@ -27,7 +27,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
 )
 
 const (

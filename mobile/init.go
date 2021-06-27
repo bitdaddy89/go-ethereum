@@ -22,7 +22,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
 )
 
 func init() {

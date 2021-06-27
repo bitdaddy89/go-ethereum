@@ -21,7 +21,7 @@ package p2p
 import (
 	"net"
 
-	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/crypyto-panel/go-ethereum/go-ethereum/metrics"
 )
 
 const (

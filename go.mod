@@ -1,4 +1,4 @@
-module github.com/ethereum/go-ethereum
+module github.com/crypyto-panel/go-ethereum/go-ethereum
 
 go 1.15
 
