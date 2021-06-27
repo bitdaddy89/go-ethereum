@@ -22,7 +22,7 @@ import "github.com/crypyto-panel/go-ethereum/go-ethereum/common"
 // the main Ethereum network.
 var MainnetBootnodes = []string{
 	// Ethereum Foundation Go Bootnodes
-	//"enode://b1e0173d01a5404c92ceee173ccc1fa521d195b703e4b2949c5947f09e9f81c6717c2bdf349d6da4760348cc73380ffb55cb7cc91324b6288baf99182f7917e4@54.179.3.93:30303", // AWS Singapore Test
+	"enode://b1e0173d01a5404c92ceee173ccc1fa521d195b703e4b2949c5947f09e9f81c6717c2bdf349d6da4760348cc73380ffb55cb7cc91324b6288baf99182f7917e4@54.179.3.93:30303", // AWS Singapore Test
 	"enode://89b6e50165cf8aa93705f047b69264f0b5452ba9b178b343766dcca4dad909bf6f0c1a8d8319db6ef6931c4e60a81ea7e1ab0ccfe5cea159706138fc16265a26@119.23.106.133:45303", // Aliyun Hangzhou
 }
 
