@@ -17,7 +17,7 @@
 package state
 
 import (
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common"
 )
 
 type accessList struct {

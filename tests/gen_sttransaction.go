@@ -6,9 +6,9 @@ import (
 	"encoding/json"
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/core/types"
 )
 
 var _ = (*stTransactionMarshaling)(nil)

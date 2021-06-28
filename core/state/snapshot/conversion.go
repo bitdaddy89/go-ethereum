@@ -26,12 +26,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/rawdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/trie"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/rawdb"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/trie"
 )
 
 // trieKV represents a trie key-value pair

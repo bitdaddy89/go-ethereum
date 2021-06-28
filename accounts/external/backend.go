@@ -21,15 +21,15 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/event"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/core"
+	"github.com/crypyto-panel/go-ethereum"
+	"github.com/crypyto-panel/go-ethereum/accounts"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/event"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/signer/core"
 )
 
 type ExternalBackend struct {

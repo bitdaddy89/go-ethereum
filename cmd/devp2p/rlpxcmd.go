@@ -20,12 +20,12 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/cmd/devp2p/internal/ethtest"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/utesting"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/rlpx"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/cmd/devp2p/internal/ethtest"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/internal/utesting"
+	"github.com/crypyto-panel/go-ethereum/p2p"
+	"github.com/crypyto-panel/go-ethereum/p2p/rlpx"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 	"gopkg.in/urfave/cli.v1"
 )
 

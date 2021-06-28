@@ -23,17 +23,17 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/consensus/misc"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/state"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/node"
-	chainParams "github.com/crypyto-panel/go-ethereum/go-ethereum/params"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/trie"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/consensus/misc"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/core/state"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/eth"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/node"
+	chainParams "github.com/crypyto-panel/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/trie"
 )
 
 // Register adds catalyst APIs to the node.

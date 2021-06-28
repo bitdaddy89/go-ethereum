@@ -14,7 +14,7 @@
 package secp256k1
 
 import (
-	_ "github.com/crypyto-panel/go-ethereum/go-ethereum/crypto/secp256k1/libsecp256k1/include"
-	_ "github.com/crypyto-panel/go-ethereum/go-ethereum/crypto/secp256k1/libsecp256k1/src"
-	_ "github.com/crypyto-panel/go-ethereum/go-ethereum/crypto/secp256k1/libsecp256k1/src/modules/recovery"
+	_ "github.com/crypyto-panel/go-ethereum/crypto/secp256k1/libsecp256k1/include"
+	_ "github.com/crypyto-panel/go-ethereum/crypto/secp256k1/libsecp256k1/src"
+	_ "github.com/crypyto-panel/go-ethereum/crypto/secp256k1/libsecp256k1/src/modules/recovery"
 )

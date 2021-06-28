@@ -22,8 +22,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/vm"
+	"github.com/crypyto-panel/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/core/vm"
 )
 
 // Compiler contains information about the parsed source

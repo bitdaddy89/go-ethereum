@@ -19,9 +19,9 @@ package types
 import (
 	"io"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 )
 
 //go:generate gencodec -type Log -field-override logMarshaling -out gen_log_json.go

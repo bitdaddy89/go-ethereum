@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/fdlimit"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/flags"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/common/fdlimit"
+	"github.com/crypyto-panel/go-ethereum/internal/flags"
+	"github.com/crypyto-panel/go-ethereum/log"
 	"gopkg.in/urfave/cli.v1"
 )
 

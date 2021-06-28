@@ -23,13 +23,13 @@ import (
 	"io/ioutil"
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/external"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/accounts"
+	"github.com/crypyto-panel/go-ethereum/accounts/external"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/log"
 )
 
 // ErrNoChainID is returned whenever the user failed to specify a chain id.

@@ -22,10 +22,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enr"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/nodestate"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/p2p/enr"
+	"github.com/crypyto-panel/go-ethereum/p2p/nodestate"
 )
 
 const (

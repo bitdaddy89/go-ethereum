@@ -21,11 +21,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/ethconfig"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/utesting"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/node"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p"
+	"github.com/crypyto-panel/go-ethereum/eth"
+	"github.com/crypyto-panel/go-ethereum/eth/ethconfig"
+	"github.com/crypyto-panel/go-ethereum/internal/utesting"
+	"github.com/crypyto-panel/go-ethereum/node"
+	"github.com/crypyto-panel/go-ethereum/p2p"
 )
 
 var (

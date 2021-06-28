@@ -17,9 +17,9 @@
 package eth
 
 import (
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/protocols/snap"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/eth/protocols/snap"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
 )
 
 // snapHandler implements the snap.Backend interface to handle the various network

@@ -17,8 +17,8 @@
 package vm
 
 import (
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/math"
 	"github.com/holiman/uint256"
 )
 

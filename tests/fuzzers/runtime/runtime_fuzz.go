@@ -17,7 +17,7 @@
 package runtime
 
 import (
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/vm/runtime"
+	"github.com/crypyto-panel/go-ethereum/core/vm/runtime"
 )
 
 // Fuzz is the basic entry point for the go-fuzz tool

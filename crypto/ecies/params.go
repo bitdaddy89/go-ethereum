@@ -42,7 +42,7 @@ import (
 	"fmt"
 	"hash"
 
-	ethcrypto "github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
+	ethcrypto "github.com/crypyto-panel/go-ethereum/crypto"
 )
 
 var (

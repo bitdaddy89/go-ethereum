@@ -30,9 +30,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/types"
 )
 
 // Tests that the account management snippets work correctly.

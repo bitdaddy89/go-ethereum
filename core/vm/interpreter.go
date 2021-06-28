@@ -20,9 +20,9 @@ import (
 	"hash"
 	"sync/atomic"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/log"
 )
 
 // Config are the configuration options for the Interpreter

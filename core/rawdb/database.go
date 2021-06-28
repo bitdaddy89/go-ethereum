@@ -24,11 +24,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb/leveldb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb/memorydb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/ethdb/leveldb"
+	"github.com/crypyto-panel/go-ethereum/ethdb/memorydb"
+	"github.com/crypyto-panel/go-ethereum/log"
 	"github.com/olekukonko/tablewriter"
 )
 

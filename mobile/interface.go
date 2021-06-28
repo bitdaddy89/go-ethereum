@@ -22,7 +22,7 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common"
 )
 
 // Interface represents a wrapped version of Go's interface{}, with the capacity

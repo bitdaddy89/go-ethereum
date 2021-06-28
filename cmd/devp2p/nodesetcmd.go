@@ -25,10 +25,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/forkid"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enr"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/core/forkid"
+	"github.com/crypyto-panel/go-ethereum/p2p/enr"
+	"github.com/crypyto-panel/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 	"gopkg.in/urfave/cli.v1"
 )
 

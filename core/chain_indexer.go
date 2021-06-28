@@ -24,12 +24,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/rawdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/event"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/rawdb"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/event"
+	"github.com/crypyto-panel/go-ethereum/log"
 )
 
 // ChainIndexerBackend defines the methods needed to process chain segments in

@@ -19,7 +19,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/log"
 )
 
 // deployDashboard queries the user for various input on deploying a web-service

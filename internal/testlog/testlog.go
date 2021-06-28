@@ -21,7 +21,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/log"
 )
 
 // Handler returns a log handler which logs to the unit test log of t.

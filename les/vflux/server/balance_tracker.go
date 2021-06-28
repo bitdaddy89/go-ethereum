@@ -20,12 +20,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/les/utils"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enr"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/nodestate"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/les/utils"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/p2p/enr"
+	"github.com/crypyto-panel/go-ethereum/p2p/nodestate"
 )
 
 const (

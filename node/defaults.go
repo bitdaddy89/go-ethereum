@@ -22,9 +22,9 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/nat"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/p2p"
+	"github.com/crypyto-panel/go-ethereum/p2p/nat"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 )
 
 const (

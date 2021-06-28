@@ -20,10 +20,10 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/forkid"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/forkid"
+	"github.com/crypyto-panel/go-ethereum/p2p"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
 )
 
 // Tests that handshake failures are detected and reported correctly.

@@ -20,7 +20,7 @@ import (
 	"math"
 	"sync"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
 )
 
 // ExpiredValue is a scalar value that is continuously expired (decreased

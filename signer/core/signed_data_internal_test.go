@@ -21,7 +21,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
 )
 
 func TestBytesPadding(t *testing.T) {

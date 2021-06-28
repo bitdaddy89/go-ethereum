@@ -26,12 +26,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/core"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/signer/core"
 )
 
 var typesStandard = core.Types{

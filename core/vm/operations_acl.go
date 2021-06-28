@@ -19,9 +19,9 @@ package vm
 import (
 	"errors"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/params"
 )
 
 func makeGasSStoreFunc(clearingRefund uint64) gasFunc {

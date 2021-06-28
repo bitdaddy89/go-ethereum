@@ -22,12 +22,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/light"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/accounts/abi/bind"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/light"
+	"github.com/crypyto-panel/go-ethereum/params"
 )
 
 // Test light syncing which will download all headers from genesis.
@@ -196,7 +196,7 @@ func testMissOracleBackend(t *testing.T, hasCheckpoint bool, protocol int) {
 	// that user wants to unlock something which blocks the oracle backend
 	// initialisation. But at the same time syncing starts.
 	//
-	// See https://github.com/crypyto-panel/go-ethereum/go-ethereum/issues/20097 for more detail.
+	// See https://github.com/crypyto-panel/go-ethereum/issues/20097 for more detail.
 	//
 	// In this case, client should run light sync or legacy checkpoint sync
 	// if hardcoded checkpoint is configured.

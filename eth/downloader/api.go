@@ -20,9 +20,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/event"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum"
+	"github.com/crypyto-panel/go-ethereum/event"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 )
 
 // PublicDownloaderAPI provides an API which gives information about the current synchronisation status.

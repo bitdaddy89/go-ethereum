@@ -24,8 +24,8 @@ import (
 	"testing"
 	"testing/quick"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enr"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/p2p/enr"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 	"github.com/stretchr/testify/assert"
 )
 

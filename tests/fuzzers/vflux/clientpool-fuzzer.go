@@ -24,14 +24,14 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb/memorydb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/les/vflux"
-	vfs "github.com/crypyto-panel/go-ethereum/go-ethereum/les/vflux/server"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enr"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
+	"github.com/crypyto-panel/go-ethereum/ethdb/memorydb"
+	"github.com/crypyto-panel/go-ethereum/les/vflux"
+	vfs "github.com/crypyto-panel/go-ethereum/les/vflux/server"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/p2p/enr"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 )
 
 var (

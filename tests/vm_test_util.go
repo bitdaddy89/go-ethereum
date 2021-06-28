@@ -22,15 +22,15 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/rawdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/state"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/vm"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/core/rawdb"
+	"github.com/crypyto-panel/go-ethereum/core/state"
+	"github.com/crypyto-panel/go-ethereum/core/vm"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/params"
 )
 
 // VMTest checks EVM execution without block or transaction context.

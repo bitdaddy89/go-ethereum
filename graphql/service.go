@@ -20,8 +20,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/ethapi"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/node"
+	"github.com/crypyto-panel/go-ethereum/internal/ethapi"
+	"github.com/crypyto-panel/go-ethereum/node"
 	"github.com/graph-gophers/graphql-go"
 )
 

@@ -26,17 +26,17 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/external"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/scwallet"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/usbwallet"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/accounts"
+	"github.com/crypyto-panel/go-ethereum/accounts/external"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/accounts/scwallet"
+	"github.com/crypyto-panel/go-ethereum/accounts/usbwallet"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/p2p"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 )
 
 const (

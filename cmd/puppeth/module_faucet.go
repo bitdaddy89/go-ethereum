@@ -26,8 +26,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/log"
 )
 
 // faucetDockerfile is the Dockerfile required to build a faucet container to

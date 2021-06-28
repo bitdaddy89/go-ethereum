@@ -22,8 +22,8 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/types"
 )
 
 // NotFound is returned by API methods if the requested item does not exist.

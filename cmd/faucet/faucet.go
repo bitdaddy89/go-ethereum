@@ -41,23 +41,23 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/cmd/utils"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/downloader"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/ethconfig"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethclient"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethstats"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/les"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/node"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/nat"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/accounts"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/cmd/utils"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/eth/downloader"
+	"github.com/crypyto-panel/go-ethereum/eth/ethconfig"
+	"github.com/crypyto-panel/go-ethereum/ethclient"
+	"github.com/crypyto-panel/go-ethereum/ethstats"
+	"github.com/crypyto-panel/go-ethereum/les"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/node"
+	"github.com/crypyto-panel/go-ethereum/p2p"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/p2p/nat"
+	"github.com/crypyto-panel/go-ethereum/params"
 	"github.com/gorilla/websocket"
 )
 
@@ -469,7 +469,7 @@ func (f *faucet) apiHandler(w http.ResponseWriter, r *http.Request) {
 			id = username
 		default:
 			//lint:ignore ST1005 This error is to be displayed in the browser
-			err = errors.New("Something funky happened, please open an issue at https://github.com/crypyto-panel/go-ethereum/go-ethereum/issues")
+			err = errors.New("Something funky happened, please open an issue at https://github.com/crypyto-panel/go-ethereum/issues")
 		}
 		if err != nil {
 			if err = sendError(wsconn, err); err != nil {

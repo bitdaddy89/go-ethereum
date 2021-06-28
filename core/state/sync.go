@@ -19,10 +19,10 @@ package state
 import (
 	"bytes"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/trie"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/trie"
 )
 
 // NewStateSync create a new state trie download scheduler.

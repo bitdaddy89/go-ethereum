@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enr"
+	"github.com/crypyto-panel/go-ethereum/p2p/enr"
 )
 
 func TestReadNodes(t *testing.T) {

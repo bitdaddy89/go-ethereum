@@ -24,8 +24,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/p2p"
 )
 
 // Tests that datadirs can be successfully created, be them manually configured

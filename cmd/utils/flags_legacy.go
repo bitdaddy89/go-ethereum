@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/node"
+	"github.com/crypyto-panel/go-ethereum/node"
 	"gopkg.in/urfave/cli.v1"
 )
 

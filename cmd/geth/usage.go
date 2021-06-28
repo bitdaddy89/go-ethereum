@@ -22,9 +22,9 @@ import (
 	"io"
 	"sort"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/cmd/utils"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/debug"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/flags"
+	"github.com/crypyto-panel/go-ethereum/cmd/utils"
+	"github.com/crypyto-panel/go-ethereum/internal/debug"
+	"github.com/crypyto-panel/go-ethereum/internal/flags"
 	"gopkg.in/urfave/cli.v1"
 )
 

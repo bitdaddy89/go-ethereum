@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 )
 
 // In this example, our client wishes to track the latest 'block number'

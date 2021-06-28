@@ -21,10 +21,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
-	vfs "github.com/crypyto-panel/go-ethereum/go-ethereum/les/vflux/server"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
+	vfs "github.com/crypyto-panel/go-ethereum/les/vflux/server"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
 )
 
 var (

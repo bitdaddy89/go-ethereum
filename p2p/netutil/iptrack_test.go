@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
 )
 
 const (

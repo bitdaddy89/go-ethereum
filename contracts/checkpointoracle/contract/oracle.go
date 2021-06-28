@@ -7,12 +7,12 @@ import (
 	"math/big"
 	"strings"
 
-	ethereum "github.com/crypyto-panel/go-ethereum/go-ethereum"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/abi"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/event"
+	ethereum "github.com/crypyto-panel/go-ethereum"
+	"github.com/crypyto-panel/go-ethereum/accounts/abi"
+	"github.com/crypyto-panel/go-ethereum/accounts/abi/bind"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/event"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

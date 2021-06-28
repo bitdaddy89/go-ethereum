@@ -27,16 +27,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/ethapi"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/fourbyte"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/storage"
+	"github.com/crypyto-panel/go-ethereum/accounts"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/internal/ethapi"
+	"github.com/crypyto-panel/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/signer/core"
+	"github.com/crypyto-panel/go-ethereum/signer/fourbyte"
+	"github.com/crypyto-panel/go-ethereum/signer/storage"
 )
 
 //Used for testing

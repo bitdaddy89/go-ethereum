@@ -22,8 +22,8 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/cmd/utils"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/cmd/utils"
+	"github.com/crypyto-panel/go-ethereum/crypto"
 	"gopkg.in/urfave/cli.v1"
 )
 

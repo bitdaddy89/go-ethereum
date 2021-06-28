@@ -19,7 +19,7 @@ package vm
 import (
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/crypto"
 )
 
 func TestJumpDestAnalysis(t *testing.T) {

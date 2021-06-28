@@ -19,10 +19,10 @@ package ethtest
 import (
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/utesting"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/eth/protocols/eth"
+	"github.com/crypyto-panel/go-ethereum/internal/utesting"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
 )
 
 // Suite represents a structure used to test a node's conformance

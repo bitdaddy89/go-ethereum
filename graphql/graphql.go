@@ -25,15 +25,15 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/state"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/filters"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/ethapi"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/core/state"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/eth/filters"
+	"github.com/crypyto-panel/go-ethereum/internal/ethapi"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 )
 
 var (

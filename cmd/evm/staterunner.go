@@ -23,10 +23,10 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/state"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/vm"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/tests"
+	"github.com/crypyto-panel/go-ethereum/core/state"
+	"github.com/crypyto-panel/go-ethereum/core/vm"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/tests"
 
 	"gopkg.in/urfave/cli.v1"
 )

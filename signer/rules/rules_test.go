@@ -22,13 +22,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/ethapi"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/storage"
+	"github.com/crypyto-panel/go-ethereum/accounts"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/internal/ethapi"
+	"github.com/crypyto-panel/go-ethereum/signer/core"
+	"github.com/crypyto-panel/go-ethereum/signer/storage"
 )
 
 const JS = `

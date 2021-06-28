@@ -22,10 +22,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/cmd/utils"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/console"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/node"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/cmd/utils"
+	"github.com/crypyto-panel/go-ethereum/console"
+	"github.com/crypyto-panel/go-ethereum/node"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 	"gopkg.in/urfave/cli.v1"
 )
 

@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/vm"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/tests"
+	"github.com/crypyto-panel/go-ethereum/core/vm"
+	"github.com/crypyto-panel/go-ethereum/tests"
 	"gopkg.in/urfave/cli.v1"
 )
 

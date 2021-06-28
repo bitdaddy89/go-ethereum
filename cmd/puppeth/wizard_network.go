@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/log"
 )
 
 // manageServers displays a list of servers the user can disconnect from, and an

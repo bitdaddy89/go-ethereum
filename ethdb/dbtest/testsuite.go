@@ -22,7 +22,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
 )
 
 // TestDatabaseSuite runs a suite of tests against a KeyValueStore database

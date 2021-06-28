@@ -25,7 +25,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 	"github.com/stretchr/testify/assert"
 )
 

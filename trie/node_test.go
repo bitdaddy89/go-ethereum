@@ -20,7 +20,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 )
 
 func newTestFullNode(v []byte) []interface{} {

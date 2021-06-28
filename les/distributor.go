@@ -21,8 +21,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/les/utils"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
+	"github.com/crypyto-panel/go-ethereum/les/utils"
 )
 
 // requestDistributor implements a mechanism that distributes requests to

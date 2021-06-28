@@ -20,9 +20,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/state"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/core/state"
+	"github.com/crypyto-panel/go-ethereum/params"
 	"github.com/holiman/uint256"
 )
 

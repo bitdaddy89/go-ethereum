@@ -27,7 +27,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/common/math"
 )
 
 type testEncoder struct {

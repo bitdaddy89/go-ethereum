@@ -24,9 +24,9 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/utesting"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/discover/v4wire"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/internal/utesting"
+	"github.com/crypyto-panel/go-ethereum/p2p/discover/v4wire"
 )
 
 const (

@@ -19,8 +19,8 @@ package client
 import (
 	"io"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/les/utils"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/les/utils"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 )
 
 const basketFactor = 1000000 // reference basket amount and value scale factor

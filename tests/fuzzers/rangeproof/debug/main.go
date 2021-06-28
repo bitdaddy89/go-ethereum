@@ -21,7 +21,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/tests/fuzzers/rangeproof"
+	"github.com/crypyto-panel/go-ethereum/tests/fuzzers/rangeproof"
 )
 
 func main() {

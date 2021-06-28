@@ -22,7 +22,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common"
 )
 
 func TestInterfaceGetSet(t *testing.T) {

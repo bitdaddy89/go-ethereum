@@ -19,7 +19,7 @@ package p2p
 import (
 	"container/heap"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/mclock"
+	"github.com/crypyto-panel/go-ethereum/common/mclock"
 )
 
 // expHeap tracks strings and their expiry time.

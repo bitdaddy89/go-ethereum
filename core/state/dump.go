@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/trie"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/trie"
 )
 
 // DumpConfig is a set of options to control what portions of the statewill be

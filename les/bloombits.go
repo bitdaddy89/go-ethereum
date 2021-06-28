@@ -19,8 +19,8 @@ package les
 import (
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/bitutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/light"
+	"github.com/crypyto-panel/go-ethereum/common/bitutil"
+	"github.com/crypyto-panel/go-ethereum/light"
 )
 
 const (

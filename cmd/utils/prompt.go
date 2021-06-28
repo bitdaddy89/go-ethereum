@@ -20,7 +20,7 @@ package utils
 import (
 	"fmt"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/console/prompt"
+	"github.com/crypyto-panel/go-ethereum/console/prompt"
 )
 
 // GetPassPhrase displays the given text(prompt) to the user and requests some textual

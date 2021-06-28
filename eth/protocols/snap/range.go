@@ -19,7 +19,7 @@ package snap
 import (
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common"
 	"github.com/holiman/uint256"
 )
 

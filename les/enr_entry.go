@@ -17,10 +17,10 @@
 package les
 
 import (
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/forkid"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/dnsdisc"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/core/forkid"
+	"github.com/crypyto-panel/go-ethereum/p2p/dnsdisc"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 )
 
 // lesEntry is the "les" ENR entry. This is set for LES servers only.

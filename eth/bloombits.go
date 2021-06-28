@@ -19,8 +19,8 @@ package eth
 import (
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/bitutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/rawdb"
+	"github.com/crypyto-panel/go-ethereum/common/bitutil"
+	"github.com/crypyto-panel/go-ethereum/core/rawdb"
 )
 
 const (

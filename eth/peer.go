@@ -21,8 +21,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/protocols/snap"
+	"github.com/crypyto-panel/go-ethereum/eth/protocols/eth"
+	"github.com/crypyto-panel/go-ethereum/eth/protocols/snap"
 )
 
 // ethPeerInfo represents a short summary of the `eth` sub-protocol metadata known

@@ -21,7 +21,7 @@ import (
 	"io"
 	"net"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 )
 
 // Entry is implemented by known node record entry types.

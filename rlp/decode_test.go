@@ -27,7 +27,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/common/math"
 )
 
 func TestStreamKind(t *testing.T) {

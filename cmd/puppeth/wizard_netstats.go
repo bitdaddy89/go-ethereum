@@ -23,8 +23,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/log"
 	"github.com/olekukonko/tablewriter"
 )
 

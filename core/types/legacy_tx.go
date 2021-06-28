@@ -19,7 +19,7 @@ package types
 import (
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common"
 )
 
 // LegacyTx is the transaction data of regular Ethereum transactions.

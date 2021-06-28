@@ -19,7 +19,7 @@ package keystore
 import (
 	"os"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
 )
 
 func Fuzz(input []byte) int {

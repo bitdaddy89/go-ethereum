@@ -20,7 +20,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/les/utils"
+	"github.com/crypyto-panel/go-ethereum/les/utils"
 )
 
 func checkU64(t *testing.T, name string, value, exp uint64) {

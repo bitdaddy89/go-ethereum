@@ -21,8 +21,8 @@ package geth
 import (
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethclient"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/ethclient"
 )
 
 // EthereumClient provides access to the Ethereum APIs.

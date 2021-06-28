@@ -20,15 +20,15 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/consensus/ethash"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/rawdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/ethconfig"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/node"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/params"
+	"github.com/crypyto-panel/go-ethereum/consensus/ethash"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/core/rawdb"
+	"github.com/crypyto-panel/go-ethereum/core/types"
+	"github.com/crypyto-panel/go-ethereum/crypto"
+	"github.com/crypyto-panel/go-ethereum/eth"
+	"github.com/crypyto-panel/go-ethereum/eth/ethconfig"
+	"github.com/crypyto-panel/go-ethereum/node"
+	"github.com/crypyto-panel/go-ethereum/params"
 )
 
 var (

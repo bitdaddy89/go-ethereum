@@ -21,7 +21,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/eth/tracers/internal/tracers"
+	"github.com/crypyto-panel/go-ethereum/eth/tracers/internal/tracers"
 )
 
 // all contains all the built in JavaScript tracers by name.

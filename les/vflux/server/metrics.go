@@ -17,7 +17,7 @@
 package server
 
 import (
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/metrics"
+	"github.com/crypyto-panel/go-ethereum/metrics"
 )
 
 var (

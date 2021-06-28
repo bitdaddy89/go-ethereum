@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
 )
 
 // Tests that the node iterator indeed walks over the entire database contents.

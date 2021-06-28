@@ -2,12 +2,12 @@ Pod::Spec.new do |spec|
   spec.name         = 'Geth'
   spec.version      = '{{.Version}}'
   spec.license      = { :type => 'GNU Lesser General Public License, Version 3.0' }
-  spec.homepage     = 'https://github.com/crypyto-panel/go-ethereum/go-ethereum'
+  spec.homepage     = 'https://github.com/crypyto-panel/go-ethereum'
   spec.authors      = { {{range .Contributors}}
 		'{{.Name}}' => '{{.Email}}',{{end}}
 	}
   spec.summary      = 'iOS Ethereum Client'
-  spec.source       = { :git => 'https://github.com/crypyto-panel/go-ethereum/go-ethereum.git', :commit => '{{.Commit}}' }
+  spec.source       = { :git => 'https://github.com/crypyto-panel/go-ethereum.git', :commit => '{{.Commit}}' }
 
 	spec.platform = :ios
   spec.ios.deployment_target  = '9.0'

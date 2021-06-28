@@ -29,11 +29,11 @@ import (
 	"syscall"
 
 	"github.com/dop251/goja"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/console/prompt"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/jsre"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/jsre/deps"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/web3ext"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/console/prompt"
+	"github.com/crypyto-panel/go-ethereum/internal/jsre"
+	"github.com/crypyto-panel/go-ethereum/internal/jsre/deps"
+	"github.com/crypyto-panel/go-ethereum/internal/web3ext"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 	"github.com/mattn/go-colorable"
 	"github.com/peterh/liner"
 )

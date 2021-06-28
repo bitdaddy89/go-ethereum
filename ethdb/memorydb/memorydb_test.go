@@ -19,8 +19,8 @@ package memorydb
 import (
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/ethdb/dbtest"
+	"github.com/crypyto-panel/go-ethereum/ethdb"
+	"github.com/crypyto-panel/go-ethereum/ethdb/dbtest"
 )
 
 func TestMemoryDB(t *testing.T) {

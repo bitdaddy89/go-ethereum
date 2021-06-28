@@ -25,12 +25,12 @@ import (
 	"time"
 
 	"github.com/dop251/goja"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/scwallet"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/usbwallet"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/console/prompt"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/jsre"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-ethereum/accounts/scwallet"
+	"github.com/crypyto-panel/go-ethereum/accounts/usbwallet"
+	"github.com/crypyto-panel/go-ethereum/common/hexutil"
+	"github.com/crypyto-panel/go-ethereum/console/prompt"
+	"github.com/crypyto-panel/go-ethereum/internal/jsre"
+	"github.com/crypyto-panel/go-ethereum/rpc"
 )
 
 // bridge is a collection of JavaScript utility methods to bride the .js runtime

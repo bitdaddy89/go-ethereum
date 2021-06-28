@@ -16,7 +16,7 @@
 
 package downloader
 
-import "github.com/crypyto-panel/go-ethereum/go-ethereum/core/types"
+import "github.com/crypyto-panel/go-ethereum/core/types"
 
 type DoneEvent struct {
 	Latest *types.Header

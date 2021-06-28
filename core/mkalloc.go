@@ -34,8 +34,8 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/rlp"
 )
 
 type allocItem struct{ Addr, Balance *big.Int }

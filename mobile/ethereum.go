@@ -21,8 +21,8 @@ package geth
 import (
 	"errors"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum"
+	"github.com/crypyto-panel/go-ethereum/common"
 )
 
 // Subscription represents an event subscription where events are

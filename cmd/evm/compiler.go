@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/cmd/evm/internal/compiler"
+	"github.com/crypyto-panel/go-ethereum/cmd/evm/internal/compiler"
 
 	"gopkg.in/urfave/cli.v1"
 )

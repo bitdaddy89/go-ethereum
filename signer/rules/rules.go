@@ -23,11 +23,11 @@ import (
 	"strings"
 
 	"github.com/dop251/goja"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/internal/ethapi"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/rules/deps"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/signer/storage"
+	"github.com/crypyto-panel/go-ethereum/internal/ethapi"
+	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-ethereum/signer/core"
+	"github.com/crypyto-panel/go-ethereum/signer/rules/deps"
+	"github.com/crypyto-panel/go-ethereum/signer/storage"
 )
 
 var (

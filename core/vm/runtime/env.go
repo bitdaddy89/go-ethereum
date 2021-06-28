@@ -17,8 +17,8 @@
 package runtime
 
 import (
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/vm"
+	"github.com/crypyto-panel/go-ethereum/core"
+	"github.com/crypyto-panel/go-ethereum/core/vm"
 )
 
 func NewEnv(cfg *Config) *vm.EVM {

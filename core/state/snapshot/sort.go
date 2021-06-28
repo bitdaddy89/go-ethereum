@@ -19,7 +19,7 @@ package snapshot
 import (
 	"bytes"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common"
 )
 
 // hashes is a helper to implement sort.Interface.

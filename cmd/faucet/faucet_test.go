@@ -19,7 +19,7 @@ package main
 import (
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/common"
 )
 
 func TestFacebook(t *testing.T) {

@@ -19,8 +19,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/cmd/utils"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/cmd/utils"
+	"github.com/crypyto-panel/go-ethereum/common"
 	"gopkg.in/urfave/cli.v1"
 )
 

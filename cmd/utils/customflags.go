@@ -26,7 +26,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common/math"
+	"github.com/crypyto-panel/go-ethereum/common/math"
 	"gopkg.in/urfave/cli.v1"
 )
 

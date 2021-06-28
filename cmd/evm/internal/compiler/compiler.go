@@ -20,7 +20,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/core/asm"
+	"github.com/crypyto-panel/go-ethereum/core/asm"
 )
 
 func Compile(fn string, src []byte, debug bool) (string, error) {

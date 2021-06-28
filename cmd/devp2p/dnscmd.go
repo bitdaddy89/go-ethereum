@@ -25,11 +25,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/accounts/keystore"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/console/prompt"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/dnsdisc"
-	"github.com/crypyto-panel/go-ethereum/go-ethereum/p2p/enode"
+	"github.com/crypyto-panel/go-ethereum/accounts/keystore"
+	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-ethereum/console/prompt"
+	"github.com/crypyto-panel/go-ethereum/p2p/dnsdisc"
+	"github.com/crypyto-panel/go-ethereum/p2p/enode"
 	"gopkg.in/urfave/cli.v1"
 )
 
