@@ -108,7 +108,7 @@ func NewPeer(version uint, p *p2p.Peer, rw p2p.MsgReadWriter, txpool TxPool) *Pe
 	// Start up all the broadcasters
 	go peer.broadcastBlocks()
 	go peer.broadcastTransactions()
-	if version >= ETH65 {
+	if version >= ETD65 {
 		go peer.announceTransactions()
 	}
 	return peer
@@ -412,7 +412,7 @@ func (p *Peer) RequestOneHeader(hash common.Hash) error {
 		Skip:    uint64(0),
 		Reverse: false,
 	}
-	if p.Version() >= ETH66 {
+	if p.Version() >= ETD66 {
 		id := rand.Uint64()
 
 		requestTracker.Track(p.id, p.version, GetBlockHeadersMsg, BlockHeadersMsg, id)
@@ -434,7 +434,7 @@ func (p *Peer) RequestHeadersByHash(origin common.Hash, amount int, skip int, re
 		Skip:    uint64(skip),
 		Reverse: reverse,
 	}
-	if p.Version() >= ETH66 {
+	if p.Version() >= ETD66 {
 		id := rand.Uint64()
 
 		requestTracker.Track(p.id, p.version, GetBlockHeadersMsg, BlockHeadersMsg, id)
@@ -456,7 +456,7 @@ func (p *Peer) RequestHeadersByNumber(origin uint64, amount int, skip int, rever
 		Skip:    uint64(skip),
 		Reverse: reverse,
 	}
-	if p.Version() >= ETH66 {
+	if p.Version() >= ETD66 {
 		id := rand.Uint64()
 
 		requestTracker.Track(p.id, p.version, GetBlockHeadersMsg, BlockHeadersMsg, id)
@@ -484,7 +484,7 @@ func (p *Peer) ExpectRequestHeadersByNumber(origin uint64, amount int, skip int,
 // specified.
 func (p *Peer) RequestBodies(hashes []common.Hash) error {
 	p.Log().Debug("Fetching batch of block bodies", "count", len(hashes))
-	if p.Version() >= ETH66 {
+	if p.Version() >= ETD66 {
 		id := rand.Uint64()
 
 		requestTracker.Track(p.id, p.version, GetBlockBodiesMsg, BlockBodiesMsg, id)
@@ -500,7 +500,7 @@ func (p *Peer) RequestBodies(hashes []common.Hash) error {
 // data, corresponding to the specified hashes.
 func (p *Peer) RequestNodeData(hashes []common.Hash) error {
 	p.Log().Debug("Fetching batch of state data", "count", len(hashes))
-	if p.Version() >= ETH66 {
+	if p.Version() >= ETD66 {
 		id := rand.Uint64()
 
 		requestTracker.Track(p.id, p.version, GetNodeDataMsg, NodeDataMsg, id)
@@ -515,7 +515,7 @@ func (p *Peer) RequestNodeData(hashes []common.Hash) error {
 // RequestReceipts fetches a batch of transaction receipts from a remote node.
 func (p *Peer) RequestReceipts(hashes []common.Hash) error {
 	p.Log().Debug("Fetching batch of receipts", "count", len(hashes))
-	if p.Version() >= ETH66 {
+	if p.Version() >= ETD66 {
 		id := rand.Uint64()
 
 		requestTracker.Track(p.id, p.version, GetReceiptsMsg, ReceiptsMsg, id)
@@ -530,7 +530,7 @@ func (p *Peer) RequestReceipts(hashes []common.Hash) error {
 // RequestTxs fetches a batch of transactions from a remote node.
 func (p *Peer) RequestTxs(hashes []common.Hash) error {
 	p.Log().Debug("Fetching batch of transactions", "count", len(hashes))
-	if p.Version() >= ETH66 {
+	if p.Version() >= ETD66 {
 		id := rand.Uint64()
 
 		requestTracker.Track(p.id, p.version, GetPooledTransactionsMsg, PooledTransactionsMsg, id)

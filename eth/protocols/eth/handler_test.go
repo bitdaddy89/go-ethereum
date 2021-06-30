@@ -110,8 +110,8 @@ func (b *testBackend) Handle(*Peer, Packet) error {
 }
 
 // Tests that block headers can be retrieved from a remote chain based on user queries.
-func TestGetBlockHeaders65(t *testing.T) { testGetBlockHeaders(t, ETH65) }
-func TestGetBlockHeaders66(t *testing.T) { testGetBlockHeaders(t, ETH66) }
+func TestGetBlockHeaders65(t *testing.T) { testGetBlockHeaders(t, ETD65) }
+func TestGetBlockHeaders66(t *testing.T) { testGetBlockHeaders(t, ETD66) }
 
 func testGetBlockHeaders(t *testing.T, protocol uint) {
 	t.Parallel()
@@ -254,7 +254,7 @@ func testGetBlockHeaders(t *testing.T, protocol uint) {
 			headers = append(headers, backend.chain.GetBlockByHash(hash).Header())
 		}
 		// Send the hash request and verify the response
-		if protocol <= ETH65 {
+		if protocol <= ETD65 {
 			p2p.Send(peer.app, GetBlockHeadersMsg, tt.query)
 			if err := p2p.ExpectMsg(peer.app, BlockHeadersMsg, headers); err != nil {
 				t.Errorf("test %d: headers mismatch: %v", i, err)
@@ -276,7 +276,7 @@ func testGetBlockHeaders(t *testing.T, protocol uint) {
 			if origin := backend.chain.GetBlockByNumber(tt.query.Origin.Number); origin != nil {
 				tt.query.Origin.Hash, tt.query.Origin.Number = origin.Hash(), 0
 
-				if protocol <= ETH65 {
+				if protocol <= ETD65 {
 					p2p.Send(peer.app, GetBlockHeadersMsg, tt.query)
 					if err := p2p.ExpectMsg(peer.app, BlockHeadersMsg, headers); err != nil {
 						t.Errorf("test %d: headers mismatch: %v", i, err)
@@ -299,8 +299,8 @@ func testGetBlockHeaders(t *testing.T, protocol uint) {
 }
 
 // Tests that block contents can be retrieved from a remote chain based on their hashes.
-func TestGetBlockBodies65(t *testing.T) { testGetBlockBodies(t, ETH65) }
-func TestGetBlockBodies66(t *testing.T) { testGetBlockBodies(t, ETH66) }
+func TestGetBlockBodies65(t *testing.T) { testGetBlockBodies(t, ETD65) }
+func TestGetBlockBodies66(t *testing.T) { testGetBlockBodies(t, ETD66) }
 
 func testGetBlockBodies(t *testing.T, protocol uint) {
 	t.Parallel()
@@ -369,7 +369,7 @@ func testGetBlockBodies(t *testing.T, protocol uint) {
 			}
 		}
 		// Send the hash request and verify the response
-		if protocol <= ETH65 {
+		if protocol <= ETD65 {
 			p2p.Send(peer.app, GetBlockBodiesMsg, hashes)
 			if err := p2p.ExpectMsg(peer.app, BlockBodiesMsg, bodies); err != nil {
 				t.Errorf("test %d: bodies mismatch: %v", i, err)
@@ -390,8 +390,8 @@ func testGetBlockBodies(t *testing.T, protocol uint) {
 }
 
 // Tests that the state trie nodes can be retrieved based on hashes.
-func TestGetNodeData65(t *testing.T) { testGetNodeData(t, ETH65) }
-func TestGetNodeData66(t *testing.T) { testGetNodeData(t, ETH66) }
+func TestGetNodeData65(t *testing.T) { testGetNodeData(t, ETD65) }
+func TestGetNodeData66(t *testing.T) { testGetNodeData(t, ETD66) }
 
 func testGetNodeData(t *testing.T, protocol uint) {
 	t.Parallel()
@@ -449,7 +449,7 @@ func testGetNodeData(t *testing.T, protocol uint) {
 	}
 	it.Release()
 
-	if protocol <= ETH65 {
+	if protocol <= ETD65 {
 		p2p.Send(peer.app, GetNodeDataMsg, hashes)
 	} else {
 		p2p.Send(peer.app, GetNodeDataMsg, GetNodeDataPacket66{
@@ -465,7 +465,7 @@ func testGetNodeData(t *testing.T, protocol uint) {
 		t.Fatalf("response packet code mismatch: have %x, want %x", msg.Code, NodeDataMsg)
 	}
 	var data [][]byte
-	if protocol <= ETH65 {
+	if protocol <= ETD65 {
 		if err := msg.Decode(&data); err != nil {
 			t.Fatalf("failed to decode response node data: %v", err)
 		}
@@ -506,8 +506,8 @@ func testGetNodeData(t *testing.T, protocol uint) {
 }
 
 // Tests that the transaction receipts can be retrieved based on hashes.
-func TestGetBlockReceipts65(t *testing.T) { testGetBlockReceipts(t, ETH65) }
-func TestGetBlockReceipts66(t *testing.T) { testGetBlockReceipts(t, ETH66) }
+func TestGetBlockReceipts65(t *testing.T) { testGetBlockReceipts(t, ETD65) }
+func TestGetBlockReceipts66(t *testing.T) { testGetBlockReceipts(t, ETD66) }
 
 func testGetBlockReceipts(t *testing.T, protocol uint) {
 	t.Parallel()
@@ -566,7 +566,7 @@ func testGetBlockReceipts(t *testing.T, protocol uint) {
 		receipts = append(receipts, backend.chain.GetReceiptsByHash(block.Hash()))
 	}
 	// Send the hash request and verify the response
-	if protocol <= ETH65 {
+	if protocol <= ETD65 {
 		p2p.Send(peer.app, GetReceiptsMsg, hashes)
 		if err := p2p.ExpectMsg(peer.app, ReceiptsMsg, receipts); err != nil {
 			t.Errorf("receipts mismatch: %v", err)
