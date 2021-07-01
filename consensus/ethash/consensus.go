@@ -39,11 +39,15 @@ import (
 
 // Ethash proof-of-work protocol constants.
 var (
-	FrontierBlockReward           = big.NewInt(5e+18) // Block reward in wei for successfully mining a block
-	ByzantiumBlockReward          = big.NewInt(3e+18) // Block reward in wei for successfully mining a block upward from Byzantium
-	ConstantinopleBlockReward     = big.NewInt(2e+18) // Block reward in wei for successfully mining a block upward from Constantinople
-	maxUncles                     = 2                 // Maximum number of uncles allowed in a single block
-	allowedFutureBlockTimeSeconds = int64(15)         // Max seconds from current time allowed for blocks, before they're considered future blocks
+	tmpReward, _ = new(big.Int).SetString("57870000000000000000", 10)
+	//	FrontierBlockReward           = big.NewInt(5e+18) // Block reward in wei for successfully mining a block
+	FrontierBlockReward = tmpReward
+	//	ByzantiumBlockReward          = big.NewInt(3e+18) // Block reward in wei for successfully mining a block upward from Byzantium
+	ByzantiumBlockReward = tmpReward
+	//	ConstantinopleBlockReward     = big.NewInt(2e+18) // Block reward in wei for successfully mining a block upward from Constantinople
+	ConstantinopleBlockReward     = tmpReward
+	maxUncles                     = 2         // Maximum number of uncles allowed in a single block
+	allowedFutureBlockTimeSeconds = int64(15) // Max seconds from current time allowed for blocks, before they're considered future blocks
 
 	// calcDifficultyEip3554 is the difficulty adjustment algorithm as specified by EIP 3554.
 	// It offsets the bomb a total of 9.7M blocks.
@@ -355,6 +359,11 @@ var (
 	big9          = big.NewInt(9)
 	big10         = big.NewInt(10)
 	bigMinus99    = big.NewInt(-99)
+	big5          = big.NewInt(5)
+	big15         = big.NewInt(15)
+	big22         = big.NewInt(22)
+	big0          = big.NewInt(0)
+	big8          = big.NewInt(8)
 )
 
 // makeDifficultyCalculator creates a difficultyCalculator with the given bomb-delay.
@@ -380,12 +389,41 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 
 		// (2 if len(parent_uncles) else 1) - (block_timestamp - parent_timestamp) // 9
 		x.Sub(bigTime, bigParentTime)
-		x.Div(x, big9)
+		cmp5 := x.Cmp(big5)
+		cmp8 := x.Cmp(big8)
+		cmp15 := x.Cmp(big15)
+		cmp22 := x.Cmp(big22)
 		if parent.UncleHash == types.EmptyUncleHash {
-			x.Sub(big1, x)
+			if cmp5 < 0 {
+				x = big1
+			} else if cmp15 < 0 {
+				x = big0
+			} else {
+				x.Add(x, big5)
+				x.Div(x, big10)
+				x.Sub(big1, x)
+			}
 		} else {
-			x.Sub(big2, x)
+			if cmp15 < 0 {
+				if cmp8 >= 0 {
+					x = big1
+				} else {
+					x = big2
+				}
+			} else if cmp22 < 0 {
+				x = big0
+			} else {
+				x.Add(x, big8)
+				x.Div(x, big10)
+				x.Sub(big2, x)
+			}
 		}
+		//		x.Div(x, big9)
+		//		if parent.UncleHash == types.EmptyUncleHash {
+		//			x.Sub(big1, x)
+		//		} else {
+		//			x.Sub(big2, x)
+		//		}
 		// max((2 if len(parent_uncles) else 1) - (block_timestamp - parent_timestamp) // 9, -99)
 		if x.Cmp(bigMinus99) < 0 {
 			x.Set(bigMinus99)
@@ -631,7 +669,7 @@ func (ethash *Ethash) SealHash(header *types.Header) (hash common.Hash) {
 
 // Some weird constants to avoid constant memory allocs for them.
 var (
-	big8  = big.NewInt(8)
+	//big8  = big.NewInt(8)
 	big32 = big.NewInt(32)
 )
 
