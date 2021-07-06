@@ -395,9 +395,11 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 		cmp22 := x.Cmp(big22)
 		if parent.UncleHash == types.EmptyUncleHash {
 			if cmp5 < 0 {
-				x = big1
+				//x = big1
+				x.Set(big1)
 			} else if cmp15 < 0 {
-				x = big0
+				//x = big0
+				x.Set(big0)
 			} else {
 				x.Add(x, big5)
 				x.Div(x, big10)
@@ -406,12 +408,15 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 		} else {
 			if cmp15 < 0 {
 				if cmp8 >= 0 {
-					x = big1
+					//x = big1
+					x.Set(big1)
 				} else {
-					x = big2
+					//x = big2
+					x.Set(big2)
 				}
 			} else if cmp22 < 0 {
-				x = big0
+				//x = big0
+				x.Set(big0)
 			} else {
 				x.Add(x, big8)
 				x.Div(x, big10)
@@ -477,13 +482,27 @@ func calcDifficultyHomestead(time uint64, parent *types.Header) *big.Int {
 
 	// 1 - (block_timestamp - parent_timestamp) // 10
 	x.Sub(bigTime, bigParentTime)
-	x.Div(x, big10)
-	x.Sub(big1, x)
+	cmp5 := x.Cmp(big5)
+	cmp15 := x.Cmp(big15)
+	if cmp5 < 0 {
+		x.Set(big1)
+	} else if cmp15 < 0 {
+		x.Set(big0)
+	} else {
+		x.Add(x, big5)
+		x.Div(x, big10)
+		x.Sub(big1, x)
+		if x.Cmp(bigMinus99) < 0 {
+			x.Set(bigMinus99)
+		}
+	}
+	//	x.Div(x, big10)
+	//	x.Sub(big1, x)
 
 	// max(1 - (block_timestamp - parent_timestamp) // 10, -99)
-	if x.Cmp(bigMinus99) < 0 {
-		x.Set(bigMinus99)
-	}
+	//	if x.Cmp(bigMinus99) < 0 {
+	//		x.Set(bigMinus99)
+	//	}
 	// (parent_diff + parent_diff // 2048 * max(1 - (block_timestamp - parent_timestamp) // 10, -99))
 	y.Div(parent.Difficulty, params.DifficultyBoundDivisor)
 	x.Mul(y, x)
