@@ -21,7 +21,8 @@ import "github.com/crypyto-panel/go-ethereum/common"
 // MainnetBootnodes are the enode URLs of the P2P bootstrap nodes running on
 // the main Ethereum network.
 var MainnetBootnodes = []string{
-	"enode://818d3df8ec2c5ba76d2b007170cbba7e96c92bedce26f72b4e56185a2d69f53b5136f21b2f5f3fe3e1d6d48f6af02f1f0681eb35477246eeda79601e6d349575@139.59.100.150:30303", //Digital Ocean
+	"enode://6461f4e7c3e7c46195be0464072fac9a6aa03ab1c2ed9bb37d8fc8fbe0e07b9b465719e7171080b264bc4e416256cf7d56d4e1baa6d633e3f00daf1279dbca3e@64.225.85.21:30303",
+	"enode://b5e502dec5963c869a99c4a4bb9141b724c291bba5efafcd1b45afebd6ac1332c2a7104c89b644f857ae0ab3a46d1a34d60e6e96b35addfa48e379506f044dca@64.225.85.56:30303", //Digital Ocean 2
 }
 
 // RopstenBootnodes are the enode URLs of the P2P bootstrap nodes running on the
