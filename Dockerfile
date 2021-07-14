@@ -14,6 +14,9 @@ RUN apt -y install golang-go
 # Install bash
 RUN apt-get install bash
 
+# Install make
+RUN apt-get install -y make
+
 # Install geth
 COPY . /build/etd
 WORKDIR /build/etd
