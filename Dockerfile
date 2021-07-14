@@ -1,28 +1,30 @@
-# Support setting various labels on the final image
-ARG COMMIT=""
-ARG VERSION=""
-ARG BUILDNUM=""
+FROM ubuntu:20.04
 
-# Build Geth in a stock Go builder container
-FROM golang:1.16-alpine as builder
+LABEL version="1.0"
+LABEL maintainer="sirily11"
 
-RUN apk add --no-cache make gcc musl-dev linux-headers git
+ENV DEBIAN_FRONTEND=noninteractive
 
-ADD . /go-ethereum
-RUN cd /go-ethereum && make geth
+WORKDIR /home/build
 
-# Pull Geth into a second stage deploy alpine container
-FROM alpine:latest
+# Install Go
+RUN apt update
+RUN apt-get -y install software-properties-common
+RUN add-apt-repository ppa:longsleep/golang-backports
+RUN apt -y install golang-go
 
-RUN apk add --no-cache ca-certificates
-COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
+# Install bash
+RUN apt-get install bash
 
-EXPOSE 8545 8546 30303 30303/udp
-ENTRYPOINT ["geth"]
+# Install Python3
+RUN apt-get install -y python3
+RUN apt-get install -y python3-pip
 
-# Add some metadata labels to help programatic image consumption
-ARG COMMIT=""
-ARG VERSION=""
-ARG BUILDNUM=""
+# Install geth
+COPY . /build/go-ethereum
+WORKDIR /build/go-ethereum
+RUN make geth
 
-LABEL commit="$COMMIT" version="$VERSION" buildnum="$BUILDNUM"
+# Export geth command
+ENV PATH="/build/go-ethereum/build/bin:${PATH}"
+RUN geth --help
