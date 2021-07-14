@@ -23,5 +23,5 @@ WORKDIR /build/etd
 RUN make geth
 
 # Export geth command
-ENV PATH="/build/go-ethereum/build/bin:${PATH}"
+ENV PATH="/build/etd/build/bin:${PATH}"
 RUN geth --help
