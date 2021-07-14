@@ -16,10 +16,6 @@ RUN apt -y install golang-go
 # Install bash
 RUN apt-get install bash
 
-# Install Python3
-RUN apt-get install -y python3
-RUN apt-get install -y python3-pip
-
 # Install geth
 COPY . /build/go-ethereum
 WORKDIR /build/go-ethereum
