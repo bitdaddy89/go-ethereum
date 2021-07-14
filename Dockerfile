@@ -5,8 +5,6 @@ LABEL maintainer="sirily11"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-WORKDIR /home/build
-
 # Install Go
 RUN apt update
 RUN apt-get -y install software-properties-common
@@ -17,8 +15,8 @@ RUN apt -y install golang-go
 RUN apt-get install bash
 
 # Install geth
-COPY . /build/go-ethereum
-WORKDIR /build/go-ethereum
+COPY . /build/etd
+WORKDIR /build/etd
 RUN make geth
 
 # Export geth command
