@@ -1,18 +1,18 @@
-// Copyright 2017 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2017 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 package clique
 
@@ -22,11 +22,11 @@ import (
 	"sort"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/params"
+	"github.com/crypyto-panel/go-etherdata/common"
+	"github.com/crypyto-panel/go-etherdata/core/types"
+	"github.com/crypyto-panel/go-etherdata/etddb"
+	"github.com/crypyto-panel/go-etherdata/log"
+	"github.com/crypyto-panel/go-etherdata/params"
 	lru "github.com/hashicorp/golang-lru"
 )
 
@@ -86,7 +86,7 @@ func newSnapshot(config *params.CliqueConfig, sigcache *lru.ARCCache, number uin
 }
 
 // loadSnapshot loads an existing snapshot from the database.
-func loadSnapshot(config *params.CliqueConfig, sigcache *lru.ARCCache, db ethdb.Database, hash common.Hash) (*Snapshot, error) {
+func loadSnapshot(config *params.CliqueConfig, sigcache *lru.ARCCache, db etddb.Database, hash common.Hash) (*Snapshot, error) {
 	blob, err := db.Get(append([]byte("clique-"), hash[:]...))
 	if err != nil {
 		return nil, err
@@ -102,7 +102,7 @@ func loadSnapshot(config *params.CliqueConfig, sigcache *lru.ARCCache, db ethdb.
 }
 
 // store inserts the snapshot into the database.
-func (s *Snapshot) store(db ethdb.Database) error {
+func (s *Snapshot) store(db etddb.Database) error {
 	blob, err := json.Marshal(s)
 	if err != nil {
 		return err

@@ -1,18 +1,18 @@
-// Copyright 2016 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2016 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 package console
 
@@ -25,18 +25,18 @@ import (
 	"time"
 
 	"github.com/dop251/goja"
-	"github.com/crypyto-panel/go-ethereum/accounts/scwallet"
-	"github.com/crypyto-panel/go-ethereum/accounts/usbwallet"
-	"github.com/crypyto-panel/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/console/prompt"
-	"github.com/crypyto-panel/go-ethereum/internal/jsre"
-	"github.com/crypyto-panel/go-ethereum/rpc"
+	"github.com/crypyto-panel/go-etherdata/accounts/scwallet"
+	"github.com/crypyto-panel/go-etherdata/accounts/usbwallet"
+	"github.com/crypyto-panel/go-etherdata/common/hexutil"
+	"github.com/crypyto-panel/go-etherdata/console/prompt"
+	"github.com/crypyto-panel/go-etherdata/internal/jsre"
+	"github.com/crypyto-panel/go-etherdata/rpc"
 )
 
 // bridge is a collection of JavaScript utility methods to bride the .js runtime
 // environment and the Go RPC connection backing the remote method calls.
 type bridge struct {
-	client   *rpc.Client         // RPC client to execute Ethereum requests through
+	client   *rpc.Client         // RPC client to execute Etherdata requests through
 	prompter prompt.UserPrompter // Input prompter to allow interactive user feedback
 	printer  io.Writer           // Output writer to serialize any display strings to
 }
@@ -50,17 +50,17 @@ func newBridge(client *rpc.Client, prompter prompt.UserPrompter, printer io.Writ
 	}
 }
 
-func getJeth(vm *goja.Runtime) *goja.Object {
-	jeth := vm.Get("jeth")
-	if jeth == nil {
-		panic(vm.ToValue("jeth object does not exist"))
+func getJetd(vm *goja.Runtime) *goja.Object {
+	jetd := vm.Get("jetd")
+	if jetd == nil {
+		panic(vm.ToValue("jetd object does not exist"))
 	}
-	return jeth.ToObject(vm)
+	return jetd.ToObject(vm)
 }
 
 // NewAccount is a wrapper around the personal.newAccount RPC method that uses a
 // non-echoing password prompt to acquire the passphrase and executes the original
-// RPC method (saved in jeth.newAccount) with it to actually execute the RPC call.
+// RPC method (saved in jetd.newAccount) with it to actually execute the RPC call.
 func (b *bridge) NewAccount(call jsre.Call) (goja.Value, error) {
 	var (
 		password string
@@ -86,9 +86,9 @@ func (b *bridge) NewAccount(call jsre.Call) (goja.Value, error) {
 		return nil, fmt.Errorf("expected 0 or 1 string argument")
 	}
 	// Password acquired, execute the call and return
-	newAccount, callable := goja.AssertFunction(getJeth(call.VM).Get("newAccount"))
+	newAccount, callable := goja.AssertFunction(getJetd(call.VM).Get("newAccount"))
 	if !callable {
-		return nil, fmt.Errorf("jeth.newAccount is not callable")
+		return nil, fmt.Errorf("jetd.newAccount is not callable")
 	}
 	ret, err := newAccount(goja.Null(), call.VM.ToValue(password))
 	if err != nil {
@@ -113,9 +113,9 @@ func (b *bridge) OpenWallet(call jsre.Call) (goja.Value, error) {
 		passwd = call.Argument(1)
 	}
 	// Open the wallet and return if successful in itself
-	openWallet, callable := goja.AssertFunction(getJeth(call.VM).Get("openWallet"))
+	openWallet, callable := goja.AssertFunction(getJetd(call.VM).Get("openWallet"))
 	if !callable {
-		return nil, fmt.Errorf("jeth.openWallet is not callable")
+		return nil, fmt.Errorf("jetd.openWallet is not callable")
 	}
 	val, err := openWallet(goja.Null(), wallet, passwd)
 	if err == nil {
@@ -196,9 +196,9 @@ func (b *bridge) readPassphraseAndReopenWallet(call jsre.Call) (goja.Value, erro
 	if err != nil {
 		return nil, err
 	}
-	openWallet, callable := goja.AssertFunction(getJeth(call.VM).Get("openWallet"))
+	openWallet, callable := goja.AssertFunction(getJetd(call.VM).Get("openWallet"))
 	if !callable {
-		return nil, fmt.Errorf("jeth.openWallet is not callable")
+		return nil, fmt.Errorf("jetd.openWallet is not callable")
 	}
 	return openWallet(goja.Null(), wallet, call.VM.ToValue(input))
 }
@@ -217,16 +217,16 @@ func (b *bridge) readPinAndReopenWallet(call jsre.Call) (goja.Value, error) {
 	if err != nil {
 		return nil, err
 	}
-	openWallet, callable := goja.AssertFunction(getJeth(call.VM).Get("openWallet"))
+	openWallet, callable := goja.AssertFunction(getJetd(call.VM).Get("openWallet"))
 	if !callable {
-		return nil, fmt.Errorf("jeth.openWallet is not callable")
+		return nil, fmt.Errorf("jetd.openWallet is not callable")
 	}
 	return openWallet(goja.Null(), wallet, call.VM.ToValue(input))
 }
 
 // UnlockAccount is a wrapper around the personal.unlockAccount RPC method that
 // uses a non-echoing password prompt to acquire the passphrase and executes the
-// original RPC method (saved in jeth.unlockAccount) with it to actually execute
+// original RPC method (saved in jetd.unlockAccount) with it to actually execute
 // the RPC call.
 func (b *bridge) UnlockAccount(call jsre.Call) (goja.Value, error) {
 	if len(call.Arguments) < 1 {
@@ -265,16 +265,16 @@ func (b *bridge) UnlockAccount(call jsre.Call) (goja.Value, error) {
 	}
 
 	// Send the request to the backend and return.
-	unlockAccount, callable := goja.AssertFunction(getJeth(call.VM).Get("unlockAccount"))
+	unlockAccount, callable := goja.AssertFunction(getJetd(call.VM).Get("unlockAccount"))
 	if !callable {
-		return nil, fmt.Errorf("jeth.unlockAccount is not callable")
+		return nil, fmt.Errorf("jetd.unlockAccount is not callable")
 	}
 	return unlockAccount(goja.Null(), account, passwd, duration)
 }
 
 // Sign is a wrapper around the personal.sign RPC method that uses a non-echoing password
 // prompt to acquire the passphrase and executes the original RPC method (saved in
-// jeth.sign) with it to actually execute the RPC call.
+// jetd.sign) with it to actually execute the RPC call.
 func (b *bridge) Sign(call jsre.Call) (goja.Value, error) {
 	if nArgs := len(call.Arguments); nArgs < 2 {
 		return nil, fmt.Errorf("usage: sign(message, account, [ password ])")
@@ -305,9 +305,9 @@ func (b *bridge) Sign(call jsre.Call) (goja.Value, error) {
 	}
 
 	// Send the request to the backend and return
-	sign, callable := goja.AssertFunction(getJeth(call.VM).Get("sign"))
+	sign, callable := goja.AssertFunction(getJetd(call.VM).Get("sign"))
 	if !callable {
-		return nil, fmt.Errorf("jeth.sign is not callable")
+		return nil, fmt.Errorf("jetd.sign is not callable")
 	}
 	return sign(goja.Null(), message, account, passwd)
 }
@@ -354,12 +354,12 @@ func (b *bridge) SleepBlocks(call jsre.Call) (goja.Value, error) {
 	// Poll the current block number until either it or a timeout is reached.
 	deadline := time.Now().Add(time.Duration(sleep) * time.Second)
 	var lastNumber hexutil.Uint64
-	if err := b.client.Call(&lastNumber, "eth_blockNumber"); err != nil {
+	if err := b.client.Call(&lastNumber, "etd_blockNumber"); err != nil {
 		return nil, err
 	}
 	for time.Now().Before(deadline) {
 		var number hexutil.Uint64
-		if err := b.client.Call(&number, "eth_blockNumber"); err != nil {
+		if err := b.client.Call(&number, "etd_blockNumber"); err != nil {
 			return nil, err
 		}
 		if number != lastNumber {

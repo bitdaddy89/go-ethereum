@@ -1,18 +1,18 @@
-// Copyright 2017 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2017 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 // Package clique implements the proof-of-authority consensus engine.
 package clique
@@ -27,20 +27,20 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/accounts"
-	"github.com/crypyto-panel/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/consensus"
-	"github.com/crypyto-panel/go-ethereum/consensus/misc"
-	"github.com/crypyto-panel/go-ethereum/core/state"
-	"github.com/crypyto-panel/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/params"
-	"github.com/crypyto-panel/go-ethereum/rlp"
-	"github.com/crypyto-panel/go-ethereum/rpc"
-	"github.com/crypyto-panel/go-ethereum/trie"
+	"github.com/crypyto-panel/go-etherdata/accounts"
+	"github.com/crypyto-panel/go-etherdata/common"
+	"github.com/crypyto-panel/go-etherdata/common/hexutil"
+	"github.com/crypyto-panel/go-etherdata/consensus"
+	"github.com/crypyto-panel/go-etherdata/consensus/misc"
+	"github.com/crypyto-panel/go-etherdata/core/state"
+	"github.com/crypyto-panel/go-etherdata/core/types"
+	"github.com/crypyto-panel/go-etherdata/crypto"
+	"github.com/crypyto-panel/go-etherdata/etddb"
+	"github.com/crypyto-panel/go-etherdata/log"
+	"github.com/crypyto-panel/go-etherdata/params"
+	"github.com/crypyto-panel/go-etherdata/rlp"
+	"github.com/crypyto-panel/go-etherdata/rpc"
+	"github.com/crypyto-panel/go-etherdata/trie"
 	lru "github.com/hashicorp/golang-lru"
 	"golang.org/x/crypto/sha3"
 )
@@ -82,7 +82,7 @@ var (
 	// block has a beneficiary set to non-zeroes.
 	errInvalidCheckpointBeneficiary = errors.New("beneficiary in checkpoint block non-zero")
 
-	// errInvalidVote is returned if a nonce value is something else that the two
+	// errInvalidVote is returned if a nonce value is sometding else that the two
 	// allowed constants of 0x00..0 or 0xff..f.
 	errInvalidVote = errors.New("vote nonce not 0x00..0 or 0xff..f")
 
@@ -142,7 +142,7 @@ var (
 // SignerFn hashes and signs the data to be signed by a backing account.
 type SignerFn func(signer accounts.Account, mimeType string, message []byte) ([]byte, error)
 
-// ecrecover extracts the Ethereum account address from a signed header.
+// ecrecover extracts the Etherdata account address from a signed header.
 func ecrecover(header *types.Header, sigcache *lru.ARCCache) (common.Address, error) {
 	// If the signature's already cached, return that
 	hash := header.Hash()
@@ -155,7 +155,7 @@ func ecrecover(header *types.Header, sigcache *lru.ARCCache) (common.Address, er
 	}
 	signature := header.Extra[len(header.Extra)-extraSeal:]
 
-	// Recover the public key and the Ethereum address
+	// Recover the public key and the Etherdata address
 	pubkey, err := crypto.Ecrecover(SealHash(header).Bytes(), signature)
 	if err != nil {
 		return common.Address{}, err
@@ -168,17 +168,17 @@ func ecrecover(header *types.Header, sigcache *lru.ARCCache) (common.Address, er
 }
 
 // Clique is the proof-of-authority consensus engine proposed to support the
-// Ethereum testnet following the Ropsten attacks.
+// Etherdata testnet following the Ropsten attacks.
 type Clique struct {
 	config *params.CliqueConfig // Consensus engine configuration parameters
-	db     ethdb.Database       // Database to store and retrieve snapshot checkpoints
+	db     etddb.Database       // Database to store and retrieve snapshot checkpoints
 
 	recents    *lru.ARCCache // Snapshots for recent block to speed up reorgs
 	signatures *lru.ARCCache // Signatures of recent blocks to speed up mining
 
 	proposals map[common.Address]bool // Current list of proposals we are pushing
 
-	signer common.Address // Ethereum address of the signing key
+	signer common.Address // Etherdata address of the signing key
 	signFn SignerFn       // Signer function to authorize hashes with
 	lock   sync.RWMutex   // Protects the signer fields
 
@@ -188,7 +188,7 @@ type Clique struct {
 
 // New creates a Clique proof-of-authority consensus engine with the initial
 // signers set to the ones provided by the user.
-func New(config *params.CliqueConfig, db ethdb.Database) *Clique {
+func New(config *params.CliqueConfig, db etddb.Database) *Clique {
 	// Set any missing consensus parameters to their defaults
 	conf := *config
 	if conf.Epoch == 0 {
@@ -207,7 +207,7 @@ func New(config *params.CliqueConfig, db ethdb.Database) *Clique {
 	}
 }
 
-// Author implements consensus.Engine, returning the Ethereum address recovered
+// Author implements consensus.Engine, returning the Etherdata address recovered
 // from the signature in the header's extra-data section.
 func (c *Clique) Author(header *types.Header) (common.Address, error) {
 	return ecrecover(header, c.signatures)

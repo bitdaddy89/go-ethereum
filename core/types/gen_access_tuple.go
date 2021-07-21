@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-etherdata/common"
 )
 
 // MarshalJSON marshals as JSON.

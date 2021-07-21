@@ -7,10 +7,10 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/crypyto-panel/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/common/hexutil"
-	"github.com/crypyto-panel/go-ethereum/common/math"
-	"github.com/crypyto-panel/go-ethereum/params"
+	"github.com/crypyto-panel/go-etherdata/common"
+	"github.com/crypyto-panel/go-etherdata/common/hexutil"
+	"github.com/crypyto-panel/go-etherdata/common/math"
+	"github.com/crypyto-panel/go-etherdata/params"
 )
 
 var _ = (*genesisSpecMarshaling)(nil)

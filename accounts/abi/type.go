@@ -1,18 +1,18 @@
-// Copyright 2015 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2015 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 package abi
 
@@ -24,7 +24,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-etherdata/common"
 )
 
 // Type enumerator
@@ -128,7 +128,7 @@ func NewType(t string, internalType string, components []ArgumentMarshaling) (ty
 		}
 	} else {
 		if parsedType[0] == "uint" || parsedType[0] == "int" {
-			// this should fail because it means that there's something wrong with
+			// this should fail because it means that there's sometding wrong with
 			// the abi type (the compiler should always format it to the size...always)
 			return Type{}, fmt.Errorf("unsupported arg type: %s", t)
 		}

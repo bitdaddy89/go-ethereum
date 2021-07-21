@@ -1,18 +1,18 @@
-// Copyright 2020 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2020 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 package nodestate
 
@@ -23,13 +23,13 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/crypyto-panel/go-ethereum/common/mclock"
-	"github.com/crypyto-panel/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/metrics"
-	"github.com/crypyto-panel/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/p2p/enr"
-	"github.com/crypyto-panel/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-etherdata/common/mclock"
+	"github.com/crypyto-panel/go-etherdata/etddb"
+	"github.com/crypyto-panel/go-etherdata/log"
+	"github.com/crypyto-panel/go-etherdata/metrics"
+	"github.com/crypyto-panel/go-etherdata/p2p/enode"
+	"github.com/crypyto-panel/go-etherdata/p2p/enr"
+	"github.com/crypyto-panel/go-etherdata/rlp"
 )
 
 var (
@@ -65,7 +65,7 @@ type (
 		started, closed     bool
 		lock                sync.Mutex
 		clock               mclock.Clock
-		db                  ethdb.KeyValueStore
+		db                  etddb.KeyValueStore
 		dbNodeKey           []byte
 		nodes               map[enode.ID]*nodeInfo
 		offlineCallbackList []offlineCallback
@@ -317,7 +317,7 @@ func (f Flags) String() string {
 // NewNodeStateMachine creates a new node state machine.
 // If db is not nil then the node states, fields and active timeouts are persisted.
 // Persistence can be enabled or disabled for each state flag and field.
-func NewNodeStateMachine(db ethdb.KeyValueStore, dbKey []byte, clock mclock.Clock, setup *Setup) *NodeStateMachine {
+func NewNodeStateMachine(db etddb.KeyValueStore, dbKey []byte, clock mclock.Clock, setup *Setup) *NodeStateMachine {
 	if setup.flags == nil {
 		panic("No state flags defined")
 	}

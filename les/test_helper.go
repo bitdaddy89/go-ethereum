@@ -1,18 +1,18 @@
-// Copyright 2016 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2016 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 // This file contains some shares testing functionality, common to multiple
 // different files and modules being tested. Client based network and Server
@@ -29,27 +29,27 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/accounts/abi/bind"
-	"github.com/crypyto-panel/go-ethereum/accounts/abi/bind/backends"
-	"github.com/crypyto-panel/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/common/mclock"
-	"github.com/crypyto-panel/go-ethereum/consensus/ethash"
-	"github.com/crypyto-panel/go-ethereum/contracts/checkpointoracle/contract"
-	"github.com/crypyto-panel/go-ethereum/core"
-	"github.com/crypyto-panel/go-ethereum/core/forkid"
-	"github.com/crypyto-panel/go-ethereum/core/rawdb"
-	"github.com/crypyto-panel/go-ethereum/core/types"
-	"github.com/crypyto-panel/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/eth/ethconfig"
-	"github.com/crypyto-panel/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/event"
-	"github.com/crypyto-panel/go-ethereum/les/checkpointoracle"
-	"github.com/crypyto-panel/go-ethereum/les/flowcontrol"
-	vfs "github.com/crypyto-panel/go-ethereum/les/vflux/server"
-	"github.com/crypyto-panel/go-ethereum/light"
-	"github.com/crypyto-panel/go-ethereum/p2p"
-	"github.com/crypyto-panel/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/params"
+	"github.com/crypyto-panel/go-etherdata/accounts/abi/bind"
+	"github.com/crypyto-panel/go-etherdata/accounts/abi/bind/backends"
+	"github.com/crypyto-panel/go-etherdata/common"
+	"github.com/crypyto-panel/go-etherdata/common/mclock"
+	"github.com/crypyto-panel/go-etherdata/consensus/etdash"
+	"github.com/crypyto-panel/go-etherdata/contracts/checkpointoracle/contract"
+	"github.com/crypyto-panel/go-etherdata/core"
+	"github.com/crypyto-panel/go-etherdata/core/forkid"
+	"github.com/crypyto-panel/go-etherdata/core/rawdb"
+	"github.com/crypyto-panel/go-etherdata/core/types"
+	"github.com/crypyto-panel/go-etherdata/crypto"
+	"github.com/crypyto-panel/go-etherdata/etd/etdconfig"
+	"github.com/crypyto-panel/go-etherdata/etddb"
+	"github.com/crypyto-panel/go-etherdata/event"
+	"github.com/crypyto-panel/go-etherdata/les/checkpointoracle"
+	"github.com/crypyto-panel/go-etherdata/les/flowcontrol"
+	vfs "github.com/crypyto-panel/go-etherdata/les/vflux/server"
+	"github.com/crypyto-panel/go-etherdata/light"
+	"github.com/crypyto-panel/go-etherdata/p2p"
+	"github.com/crypyto-panel/go-etherdata/p2p/enode"
+	"github.com/crypyto-panel/go-etherdata/params"
 )
 
 var (
@@ -179,7 +179,7 @@ func prepare(n int, backend *backends.SimulatedBackend) {
 }
 
 // testIndexers creates a set of indexers with specified params for testing purpose.
-func testIndexers(db ethdb.Database, odr light.OdrBackend, config *light.IndexerConfig, disablePruning bool) []*core.ChainIndexer {
+func testIndexers(db etddb.Database, odr light.OdrBackend, config *light.IndexerConfig, disablePruning bool) []*core.ChainIndexer {
 	var indexers [3]*core.ChainIndexer
 	indexers[0] = light.NewChtIndexer(db, odr, config.ChtSize, config.ChtConfirms, disablePruning)
 	indexers[1] = core.NewBloomIndexer(db, config.BloomSize, config.BloomConfirms)
@@ -189,10 +189,10 @@ func testIndexers(db ethdb.Database, odr light.OdrBackend, config *light.Indexer
 	return indexers[:]
 }
 
-func newTestClientHandler(backend *backends.SimulatedBackend, odr *LesOdr, indexers []*core.ChainIndexer, db ethdb.Database, peers *serverPeerSet, ulcServers []string, ulcFraction int) (*clientHandler, func()) {
+func newTestClientHandler(backend *backends.SimulatedBackend, odr *LesOdr, indexers []*core.ChainIndexer, db etddb.Database, peers *serverPeerSet, ulcServers []string, ulcFraction int) (*clientHandler, func()) {
 	var (
 		evmux  = new(event.TypeMux)
-		engine = ethash.NewFaker()
+		engine = etdash.NewFaker()
 		gspec  = core.Genesis{
 			Config:   params.AllEthashProtocolChanges,
 			Alloc:    core.GenesisAlloc{bankAddr: {Balance: bankFunds}},
@@ -221,10 +221,10 @@ func newTestClientHandler(backend *backends.SimulatedBackend, odr *LesOdr, index
 		}
 		oracle = checkpointoracle.New(checkpointConfig, getLocal)
 	}
-	client := &LightEthereum{
+	client := &LightEtherdata{
 		lesCommons: lesCommons{
 			genesis:     genesis.Hash(),
-			config:      &ethconfig.Config{LightPeers: 100, NetworkId: NetworkId},
+			config:      &etdconfig.Config{LightPeers: 100, NetworkId: NetworkId},
 			chainConfig: params.AllEthashProtocolChanges,
 			iConfig:     light.TestClientIndexerConfig,
 			chainDb:     db,
@@ -251,7 +251,7 @@ func newTestClientHandler(backend *backends.SimulatedBackend, odr *LesOdr, index
 	}
 }
 
-func newTestServerHandler(blocks int, indexers []*core.ChainIndexer, db ethdb.Database, clock mclock.Clock) (*serverHandler, *backends.SimulatedBackend, func()) {
+func newTestServerHandler(blocks int, indexers []*core.ChainIndexer, db etddb.Database, clock mclock.Clock) (*serverHandler, *backends.SimulatedBackend, func()) {
 	var (
 		gspec = core.Genesis{
 			Config:   params.AllEthashProtocolChanges,
@@ -291,7 +291,7 @@ func newTestServerHandler(blocks int, indexers []*core.ChainIndexer, db ethdb.Da
 	server := &LesServer{
 		lesCommons: lesCommons{
 			genesis:     genesis.Hash(),
-			config:      &ethconfig.Config{LightPeers: 100, NetworkId: NetworkId},
+			config:      &etdconfig.Config{LightPeers: 100, NetworkId: NetworkId},
 			chainConfig: params.AllEthashProtocolChanges,
 			iConfig:     light.TestServerIndexerConfig,
 			chainDb:     db,
@@ -448,7 +448,7 @@ type indexerCallback func(*core.ChainIndexer, *core.ChainIndexer, *core.ChainInd
 // testClient represents a client object for testing with necessary auxiliary fields.
 type testClient struct {
 	clock   mclock.Clock
-	db      ethdb.Database
+	db      etddb.Database
 	peer    *testPeer
 	handler *clientHandler
 
@@ -512,7 +512,7 @@ func (client *testClient) newRawPeer(t *testing.T, name string, version int, rec
 type testServer struct {
 	clock   mclock.Clock
 	backend *backends.SimulatedBackend
-	db      ethdb.Database
+	db      etddb.Database
 	peer    *testPeer
 	handler *serverHandler
 

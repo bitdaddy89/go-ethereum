@@ -14,7 +14,7 @@ Example:
   "messages": [
     {
       "name": "message",
-      "value": "\u0019Ethereum Signed Message:\n11hello world",
+      "value": "\u0019Etherdata Signed Message:\n11hello world",
       "type": "text/plain"
     }
   ],
@@ -71,7 +71,7 @@ Example:
   "call_info": [
     {
       "type": "Warning",
-      "message": "Something looks odd, show this message as a warning"
+      "message": "Sometding looks odd, show this message as a warning"
     },
     {
       "type": "Info",

@@ -1,20 +1,20 @@
-// Copyright 2015 The go-ethereum Authors
-// This file is part of go-ethereum.
+// Copyright 2015 The go-etherdata Authors
+// This file is part of go-etherdata.
 //
-// go-ethereum is free software: you can redistribute it and/or modify
+// go-etherdata is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// go-ethereum is distributed in the hope that it will be useful,
+// go-etherdata is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with go-ethereum. If not, see <http://www.gnu.org/licenses/>.
+// along with go-etherdata. If not, see <http://www.gnu.org/licenses/>.
 
-// bootnode runs a bootstrap node for the Ethereum Discovery Protocol.
+// bootnode runs a bootstrap node for the Etherdata Discovery Protocol.
 package main
 
 import (
@@ -24,13 +24,13 @@ import (
 	"net"
 	"os"
 
-	"github.com/crypyto-panel/go-ethereum/cmd/utils"
-	"github.com/crypyto-panel/go-ethereum/crypto"
-	"github.com/crypyto-panel/go-ethereum/log"
-	"github.com/crypyto-panel/go-ethereum/p2p/discover"
-	"github.com/crypyto-panel/go-ethereum/p2p/enode"
-	"github.com/crypyto-panel/go-ethereum/p2p/nat"
-	"github.com/crypyto-panel/go-ethereum/p2p/netutil"
+	"github.com/crypyto-panel/go-etherdata/cmd/utils"
+	"github.com/crypyto-panel/go-etherdata/crypto"
+	"github.com/crypyto-panel/go-etherdata/log"
+	"github.com/crypyto-panel/go-etherdata/p2p/discover"
+	"github.com/crypyto-panel/go-etherdata/p2p/enode"
+	"github.com/crypyto-panel/go-etherdata/p2p/nat"
+	"github.com/crypyto-panel/go-etherdata/p2p/netutil"
 )
 
 func main() {
@@ -111,7 +111,7 @@ func main() {
 	realaddr := conn.LocalAddr().(*net.UDPAddr)
 	if natm != nil {
 		if !realaddr.IP.IsLoopback() {
-			go nat.Map(natm, nil, "udp", realaddr.Port, realaddr.Port, "ethereum discovery")
+			go nat.Map(natm, nil, "udp", realaddr.Port, realaddr.Port, "etherdata discovery")
 		}
 		if ext, err := natm.ExternalIP(); err == nil {
 			realaddr = &net.UDPAddr{IP: ext, Port: realaddr.Port}

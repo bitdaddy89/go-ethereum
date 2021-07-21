@@ -83,7 +83,7 @@ outcome of a controlled simulation action (e.g. creating a node or explicitly
 connecting two nodes together).
 
 This is in contrast to a non-control event, otherwise called a "live" event,
-which is the outcome of something happening in the network as a result of a
+which is the outcome of sometding happening in the network as a result of a
 control event (e.g. a node actually started up or a connection was actually
 established between two nodes).
 
@@ -106,7 +106,7 @@ with a `Step` which has the following fields:
 * `Trigger` - a channel which receives node IDs which then trigger a check
     of the expectation function to be performed against that node
 
-As a concrete example, consider a simulated network of Ethereum nodes. An
+As a concrete example, consider a simulated network of Etherdata nodes. An
 `Action` could be the sending of a transaction, `Expect` it being included in
 a block, and `Trigger` a check for every block that is mined.
 

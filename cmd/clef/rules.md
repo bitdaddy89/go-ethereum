@@ -52,7 +52,7 @@ invokes the corresponding method. In doing so, there are three possible outcomes
   * Auto-approve request
 2. JS returns "Reject"
   * Auto-reject request
-3. Error occurs, or something else is returned
+3. Error occurs, or sometding else is returned
   * Pass on to `next` ui: the regular UI channel.
 
 A more advanced example can be found below, "Example 1: ruleset for a rate-limited window", using `storage` to `Put` and `Get` `string`s by key.
@@ -89,7 +89,7 @@ Some security precautions can be made, such as:
 ##### Security of implementation
 
 The drawbacks of this very flexible solution is that the `signer` needs to contain a javascript engine. This is pretty simple to implement, since it's already
-implemented for `geth`. There are no known security vulnerabilities in, nor have we had any security-problems with it so far.
+implemented for `getd`. There are no known security vulnerabilities in, nor have we had any security-problems with it so far.
 
 The javascript engine would be an added attack surface; but if the validation of `rulesets` is made good (with hash-based attestation), the actual javascript cannot be considered
 an attack surface -- if an attacker can control the ruleset, a much simpler attack would be to implement an "always-approve" rule instead of exploiting the js vm. The only benefit

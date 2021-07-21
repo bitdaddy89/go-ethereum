@@ -1,18 +1,18 @@
-// Copyright 2019 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2019 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 package snapshot
 
@@ -23,12 +23,12 @@ import (
 	"testing"
 
 	"github.com/VictoriaMetrics/fastcache"
-	"github.com/crypyto-panel/go-ethereum/common"
-	"github.com/crypyto-panel/go-ethereum/core/rawdb"
-	"github.com/crypyto-panel/go-ethereum/ethdb"
-	"github.com/crypyto-panel/go-ethereum/ethdb/leveldb"
-	"github.com/crypyto-panel/go-ethereum/ethdb/memorydb"
-	"github.com/crypyto-panel/go-ethereum/rlp"
+	"github.com/crypyto-panel/go-etherdata/common"
+	"github.com/crypyto-panel/go-etherdata/core/rawdb"
+	"github.com/crypyto-panel/go-etherdata/etddb"
+	"github.com/crypyto-panel/go-etherdata/etddb/leveldb"
+	"github.com/crypyto-panel/go-etherdata/etddb/memorydb"
+	"github.com/crypyto-panel/go-etherdata/rlp"
 )
 
 // reverse reverses the contents of a byte slice. It's used to update random accs
@@ -41,7 +41,7 @@ func reverse(blob []byte) []byte {
 	return res
 }
 
-// Tests that merging something into a disk layer persists it into the database
+// Tests that merging sometding into a disk layer persists it into the database
 // and invalidates any previously written and cached values.
 func TestDiskMerge(t *testing.T) {
 	// Create some accounts in the disk layer
@@ -215,7 +215,7 @@ func TestDiskMerge(t *testing.T) {
 	assertDatabaseStorage(conNukeCache, conNukeCacheSlot, nil)
 }
 
-// Tests that merging something into a disk layer persists it into the database
+// Tests that merging sometding into a disk layer persists it into the database
 // and invalidates any previously written and cached values, discarding anything
 // after the in-progress generation marker.
 func TestDiskPartialMerge(t *testing.T) {
@@ -505,7 +505,7 @@ func TestDiskGeneratorPersistence(t *testing.T) {
 	}
 }
 
-// Tests that merging something into a disk layer persists it into the database
+// Tests that merging sometding into a disk layer persists it into the database
 // and invalidates any previously written and cached values, discarding anything
 // after the in-progress generation marker.
 //
@@ -518,7 +518,7 @@ func TestDiskMidAccountPartialMerge(t *testing.T) {
 // TestDiskSeek tests that seek-operations work on the disk layer
 func TestDiskSeek(t *testing.T) {
 	// Create some accounts in the disk layer
-	var db ethdb.Database
+	var db etddb.Database
 
 	if dir, err := ioutil.TempDir("", "disklayer-test"); err != nil {
 		t.Fatal(err)

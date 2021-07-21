@@ -24,7 +24,7 @@ const (
 
 // locationTrims are trimmed for display to avoid unwieldy log lines.
 var locationTrims = []string{
-	"github.com/crypyto-panel/go-ethereum/",
+	"github.com/crypyto-panel/go-etherdata/",
 }
 
 // PrintOrigins sets or unsets log location (file:line) printing for terminal

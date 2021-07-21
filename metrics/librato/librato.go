@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/metrics"
+	"github.com/crypyto-panel/go-etherdata/metrics"
 )
 
 // a regexp for extracting the unit from time.Duration.String

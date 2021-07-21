@@ -17,11 +17,11 @@ RUN apt-get install bash
 # Install make
 RUN apt-get install -y make
 
-# Install geth
+# Install getd
 COPY . /build/etd
 WORKDIR /build/etd
-RUN make geth
+RUN make getd
 
-# Export geth command
+# Export getd command
 ENV PATH="/build/etd/build/bin:${PATH}"
-RUN geth --help
+RUN getd --help

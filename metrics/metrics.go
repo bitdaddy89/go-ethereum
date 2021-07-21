@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-etherdata/log"
 )
 
 // Enabled is checked by the constructor functions for all of the

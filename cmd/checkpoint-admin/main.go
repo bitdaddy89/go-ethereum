@@ -1,18 +1,18 @@
-// Copyright 2019 The go-ethereum Authors
-// This file is part of go-ethereum.
+// Copyright 2019 The go-etherdata Authors
+// This file is part of go-etherdata.
 //
-// go-ethereum is free software: you can redistribute it and/or modify
+// go-etherdata is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// go-ethereum is distributed in the hope that it will be useful,
+// go-etherdata is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with go-ethereum. If not, see <http://www.gnu.org/licenses/>.
+// along with go-etherdata. If not, see <http://www.gnu.org/licenses/>.
 
 // checkpoint-admin is a utility that can be used to query checkpoint information
 // and register stable checkpoints into an oracle contract.
@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/crypyto-panel/go-ethereum/common/fdlimit"
-	"github.com/crypyto-panel/go-ethereum/internal/flags"
-	"github.com/crypyto-panel/go-ethereum/log"
+	"github.com/crypyto-panel/go-etherdata/common/fdlimit"
+	"github.com/crypyto-panel/go-etherdata/internal/flags"
+	"github.com/crypyto-panel/go-etherdata/log"
 	"gopkg.in/urfave/cli.v1"
 )
 
@@ -37,7 +37,7 @@ var (
 var app *cli.App
 
 func init() {
-	app = flags.NewApp(gitCommit, gitDate, "ethereum checkpoint helper tool")
+	app = flags.NewApp(gitCommit, gitDate, "etherdata checkpoint helper tool")
 	app.Commands = []cli.Command{
 		commandStatus,
 		commandDeploy,
@@ -72,7 +72,7 @@ var (
 	nodeURLFlag = cli.StringFlag{
 		Name:  "rpc",
 		Value: "http://localhost:8545",
-		Usage: "The rpc endpoint of a local or remote geth node",
+		Usage: "The rpc endpoint of a local or remote getd node",
 	}
 	clefURLFlag = cli.StringFlag{
 		Name:  "clef",

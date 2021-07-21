@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/crypyto-panel/go-ethereum/common"
+	"github.com/crypyto-panel/go-etherdata/common"
 )
 
 func (g *G2) one() *PointG2 {

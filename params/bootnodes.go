@@ -1,25 +1,25 @@
-// Copyright 2015 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2015 The go-etherdata Authors
+// This file is part of the go-etherdata library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-etherdata library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-etherdata library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-etherdata library. If not, see <http://www.gnu.org/licenses/>.
 
 package params
 
-import "github.com/crypyto-panel/go-ethereum/common"
+import "github.com/crypyto-panel/go-etherdata/common"
 
 // MainnetBootnodes are the enode URLs of the P2P bootstrap nodes running on
-// the main Ethereum network.
+// the main Etherdata network.
 var MainnetBootnodes = []string{
 	"enode://6461f4e7c3e7c46195be0464072fac9a6aa03ab1c2ed9bb37d8fc8fbe0e07b9b465719e7171080b264bc4e416256cf7d56d4e1baa6d633e3f00daf1279dbca3e@64.225.85.21:30303",
 	"enode://b5e502dec5963c869a99c4a4bb9141b724c291bba5efafcd1b45afebd6ac1332c2a7104c89b644f857ae0ab3a46d1a34d60e6e96b35addfa48e379506f044dca@64.225.85.56:30303", //Digital Ocean 2
@@ -70,7 +70,7 @@ var V5Bootnodes = []string{
 const dnsPrefix = "enrtree://AKA3AM6LPBYEUDMVNU3BSVQJ5AD45Y7YPOHJLEF6W26QOE4VTUDPE@"
 
 // KnownDNSNetwork returns the address of a public DNS-based node list for the given
-// genesis hash and protocol. See https://github.com/crypyto-panel/go-ethereum/discv4-dns-lists for more
+// genesis hash and protocol. See https://github.com/crypyto-panel/go-etherdata/discv4-dns-lists for more
 // information.
 func KnownDNSNetwork(genesis common.Hash, protocol string) string {
 	var net string
@@ -86,5 +86,5 @@ func KnownDNSNetwork(genesis common.Hash, protocol string) string {
 	default:
 		return ""
 	}
-	return dnsPrefix + protocol + "." + net + ".ethdisco.net"
+	return dnsPrefix + protocol + "." + net + ".etddisco.net"
 }

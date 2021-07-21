@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/crypyto-panel/go-ethereum/metrics"
+	"github.com/crypyto-panel/go-etherdata/metrics"
 )
 
 func TestMain(m *testing.M) {

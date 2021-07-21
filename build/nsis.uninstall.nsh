@@ -17,12 +17,12 @@ Section "Uninstall"
   rmDir "$SMPROGRAMS\${APPNAME}"
 
   # Firewall - remove rules if exists
-  SimpleFC::AdvRemoveRule "Geth incoming peers (TCP:30303)"
-  SimpleFC::AdvRemoveRule "Geth outgoing peers (TCP:30303)"
-  SimpleFC::AdvRemoveRule "Geth UDP discovery (UDP:30303)"
+  SimpleFC::AdvRemoveRule "Getd incoming peers (TCP:30303)"
+  SimpleFC::AdvRemoveRule "Getd outgoing peers (TCP:30303)"
+  SimpleFC::AdvRemoveRule "Getd UDP discovery (UDP:30303)"
 
-  # Remove IPC endpoint (https://github.com/crypyto-panel/go-ethereum/EIPs/issues/147)
-  ${un.EnvVarUpdate} $0 "ETHEREUM_SOCKET" "R" "HKLM" "\\.\pipe\geth.ipc"
+  # Remove IPC endpoint (https://github.com/crypyto-panel/go-etherdata/EIPs/issues/147)
+  ${un.EnvVarUpdate} $0 "ETHERDATA_SOCKET" "R" "HKLM" "\\.\pipe\getd.ipc"
 
   # Remove install directory from PATH
   Push "$INSTDIR"
